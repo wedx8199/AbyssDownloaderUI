@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Abyss Downloader
+Comment=Download videos from a single webpage or a TXT list
+Exec=/home/kai/projects/abyss/run-app.sh
+Icon=video-x-generic
+Terminal=false
+Categories=AudioVideo;Utility;
+StartupNotify=false
