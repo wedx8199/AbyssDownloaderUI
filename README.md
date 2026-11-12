@@ -2,6 +2,10 @@
 
 A local **desktop app** for pasting a single webpage URL or loading URLs from a TXT file, extracting a video ID and title using XPath, and running `abyss-dl.jar` **one video at a time, in file order**.
 
+## Platform support
+
+Currently supported on **Linux only**. A Windows version is planned for a later release; the setup and launch instructions below are for Linux.
+
 ## Start
 
 Python 3.10+ and Java are required. Use a normal desktop session (Tkinter needs a display).
