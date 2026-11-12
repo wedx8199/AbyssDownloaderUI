@@ -6,9 +6,53 @@ A local **desktop app** for pasting a single webpage URL or loading URLs from a 
 
 Currently supported on **Linux only**. A Windows version is planned for a later release; the setup and launch instructions below are for Linux.
 
-## Start
+## Prerequisites
 
-Python 3.10+ and Java are required. Use a normal desktop session (Tkinter needs a display).
+Before using the app, ensure that **Java Development Kit (JDK 21)** is installed. Python 3.10+ is also required. Use a normal desktop session (Tkinter needs a display).
+
+### Installation instructions for JDK 21 (Linux)
+
+Install OpenJDK 21 using your distribution's package manager:
+
+**Ubuntu 24.04+ / Debian releases with OpenJDK 21 available:**
+
+```bash
+sudo apt update
+sudo apt install openjdk-21-jdk
+```
+
+If your release cannot find `openjdk-21-jdk`, use the [Eclipse Temurin installation instructions](https://adoptium.net/installation) to install Temurin JDK 21 for your Linux distribution instead.
+
+**Fedora:**
+
+```bash
+sudo dnf install java-21-openjdk-devel
+```
+
+**Verify the installation:**
+
+```bash
+java -version
+javac -version
+```
+
+Both commands should report version **21**. The app uses `java` from your `PATH`.
+
+If multiple Java versions are installed, select Java 21 for both commands:
+
+```bash
+# Ubuntu / Debian:
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+# Fedora (use these instead):
+# sudo alternatives --config java
+# sudo alternatives --config javac
+```
+
+Run the version checks again before starting the app.
+
+## Start
 
 ```bash
 cd /home/kai/projects/abyss
@@ -28,7 +72,7 @@ Alternatively, run `./run-app.sh` from a terminal. It uses the app's virtual env
 
 These are Linux launchers, not a Windows `.bat` file. Python dependencies must be installed before launching.
 
-On Debian/Ubuntu, if Tkinter is missing, install `python3-tk` (and `python3-venv` if needed). If Chromium reports missing system libraries, run `.venv/bin/python -m playwright install-deps chromium` after reviewing its system-package changes. Java must be on `PATH`; the required Java version depends on your JAR.
+On Debian/Ubuntu, if Tkinter is missing, install `python3-tk` (and `python3-venv` if needed). If Chromium reports missing system libraries, run `.venv/bin/python -m playwright install-deps chromium` after reviewing its system-package changes. JDK 21 must be installed, with `java` available on your `PATH` (see the installation instructions above).
 
 The app defaults to the existing `abyss-dl.jar` and `vids` directory beside `app.py`. Both can be changed with Browse. The selected output folder must already exist and be writable.
 
